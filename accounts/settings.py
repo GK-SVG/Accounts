@@ -23,9 +23,9 @@ CRISPY_TEMPLATE_PACK = 'bootstrap3'
 SECRET_KEY = '1v&+^%q^l5snta)(d=9v^*mlk0l-y6ck3gtnneq@(tp-vf^a9u'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['gautam-accounts.herokuapp.com','127.0.0.1']
 
 
 # Application definition
