@@ -11,7 +11,8 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-
+import django_heroku
+django_heroku.settings(locals())
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
@@ -33,6 +34,7 @@ ALLOWED_HOSTS = ['gautam-accounts.herokuapp.com','127.0.0.1']
 INSTALLED_APPS = [
     'user.apps.UserConfig',
     'crispy_forms',
+    'django_email_verification',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -136,3 +138,10 @@ EMAIL_PORT=587
 EMAIL_USE_TLS=True
 EMAIL_HOST_USER='gk32239@gmail.com'
 EMAIL_HOST_PASSWORD='gautam138028'
+EMAIL_MAIL_SUBJECT = 'gk32239@gmail.com'
+EMAIL_MAIL_HTML = 'mail_body.html'
+EMAIL_MAIL_PLAIN = 'mail_body.txt'
+EMAIL_PAGE_TEMPLATE = 'confirm_template.html'
+EMAIL_PAGE_DOMAIN = 'http://mysite.com/'
+EMAIL_MODEL_ADMIN = False # the default value is False
+

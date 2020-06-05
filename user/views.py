@@ -8,12 +8,18 @@ from django.core.mail import send_mail
 from django.core.mail import EmailMultiAlternatives 
 from django.template.loader import get_template 
 from django.template import Context 
-   
+from django.contrib.auth import get_user_model
+from django_email_verification import sendConfirm
+
    
 #################### index#######################################  
 def index(request): 
     return render(request, 'user/index.html') 
-   
+
+def myCreateView(request):
+    user = get_user_model().objects.create(username=username, password=password, email=email)
+    sendConfirm(user)
+    return render('user/index.html')
 ########### register here #####################################  
 def register(request): 
     if request.method == 'POST': 
